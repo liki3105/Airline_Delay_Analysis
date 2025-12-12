@@ -111,19 +111,20 @@ This project analyzes U.S. domestic airline delays over almost two decades. Usin
 
 ## Visualizations
 
-**Top 10 Airports by Average Delay Rate**  
-![Top Airports](visuals/top_airports_avg_delay.png)
+**1. Top Airports by Average Delay Rate**  
+![Airport by Average Delay](visuals/Airport by Average Delay.png)
 
-**Average Delay Rate by Season**  
-![Seasonal Delay](visuals/seasonal_delay_rate.png)
+**2. Average Delay Rate by Season**  
+![Average Delay Rate by Season](visuals/Average Delay Rate by Season.png)
 
-**Yearly Trend of Average Delay Rate**  
-![Yearly Trend](visuals/yearly_avg_delay.png)
+**3. Average Delay Rate over Time**  
+![Average Delay Rate over Time](visuals/Average Delay Rate over Time.png)
 
-**Delay Causes by Airline**  
-![Delay Causes](visuals/delay_causes_airline.png)
+**4. Average Contribution to Total Delay**  
+![Average Contribution to Total Delay](visuals/Average Contribution to Total Delay.png)
 
-> Note: Replace `visuals/...` with the relative paths where screenshots are saved in your repo.
+**5. Average Delay Rate (All Airlines)**  
+![Average Delay Rate](visuals/Average Delay Rate.png)
 
 ---
 
