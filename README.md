@@ -111,20 +111,20 @@ This project analyzes U.S. domestic airline delays over almost two decades. Usin
 
 ## Visualizations
 
-**1. Top Airports by Average Delay Rate**  
-![Airport by Average Delay](visuals/Airport by Average Delay.png)
+1. Top Airports by Average Delay Rate  
+![Airport by Average Delay](visuals/airport_by_average_delay.png)
 
-**2. Average Delay Rate by Season**  
-![Average Delay Rate by Season](visuals/Average Delay Rate by Season.png)
+2. Average Delay Rate by Season  
+![Average Delay Rate by Season](visuals/average_delay_rate_by_season.png)
 
-**3. Average Delay Rate over Time**  
-![Average Delay Rate over Time](visuals/Average Delay Rate over Time.png)
+3. Average Delay Rate over Time  
+![Average Delay Rate over Time](visuals/average_delay_rate_over_time.png)
 
-**4. Average Contribution to Total Delay**  
-![Average Contribution to Total Delay](visuals/Average Contribution to Total Delay.png)
+4. Average Contribution to Total Delay  
+![Average Contribution to Total Delay](visuals/average_contribution_to_total_delay.png)
 
-**5. Average Delay Rate (All Airlines)**  
-![Average Delay Rate](visuals/Average Delay Rate.png)
+5. Average Delay Rate (All Airlines)  
+![Average Delay Rate](visuals/average_delay_rate_all_airlines.png)
 
 ---
 
