@@ -1,196 +1,162 @@
-\# Airline Delay Analysis (2003–2022)
+Airline Delay Analysis (2003–2022)
 
+Project Overview
 
+This project analyzes U.S. domestic airline delays over almost two decades. Using Python and SQL, we clean, explore, and aggregate airline and airport delay data to provide actionable insights.
 
-\## 🚀 Project Overview
+The main goals:
 
+Identify airlines and airports with high delay rates
 
+Understand seasonal and yearly delay trends
 
-This project explores \*\*U.S. domestic airline delay data\*\* spanning nearly two decades (2003–2022).  
+Analyze causes of delays (carrier, weather, NAS, security, late aircraft)
 
-Using \*\*Python (Pandas)\*\* for data cleaning and exploratory analysis (EDA) and \*\*PostgreSQL\*\* for aggregated SQL analysis, we uncover patterns and trends in airline and airport delays.  
+Key Insights
 
+Airlines with Highest Delay Rates
 
+Airline	Avg Delay Rate	Avg Delay Minutes	Dominant Delay Cause
+Atlantic Southeast Airlines	24.4%	54 min	NAS / air traffic
+JetBlue Airways	23.6%	59 min	Late Aircraft
+Allegiant Air	22.6%	60 min	Late Aircraft
 
-The goal is to provide actionable insights for \*\*airline operations, airport management, and strategic planning\*\*, which can also be visualized in dashboards or reporting tools such as Power BI.
+Airports with Longest Delays
 
+Airport	Avg Delay Rate	Avg Delay Minutes
+Youngstown/Warren, OH	100%	59.5
+Pinehurst/Southern Pines, NC	41.9%	52.3
+Topeka, KS	36.5%	61.2
+Newark, NJ	28.1%	65.6
 
+Seasonal Delay Patterns
 
----
+Summer: 22.7%
 
+Winter: 21.9%
 
+Spring: 18.3%
 
-\## 🌟 Key Insights
+Fall: 16.1%
 
+Yearly Trend
 
+Peak delays: 2006–2007 (~25%)
 
-1\. \*\*Airlines with Highest Delay Rates\*\*
+COVID impact: 2020 (~9.6%)
 
-&nbsp;  - Atlantic Southeast Airlines, JetBlue Airways, and Allegiant Air have the highest delay rates (~22–25%).  
+Post-pandemic return: 2021–2022 (~17–21%)
 
-&nbsp;  - Delay causes vary:
+Delay Causes by Airline
 
-&nbsp;    - Carrier-related delays dominate Hawaiian Airlines (~63% of total delay minutes).
+Airline	Carrier Delay %	Weather %	NAS %	Security %	Late Aircraft %
+Hawaiian Airlines	63%	2%	1.8%	0.4%	32%
+Aloha Airlines	51%	0.6%	9%	0.8%	38%
 
-&nbsp;    - NAS/air traffic delays dominate Northwest Airlines (~45% of total delay minutes).
+🗂 Repository Structure
+Folder/File	Description
+Airline_Delay_Cause/	Raw Kaggle dataset (Airline_Delay_Cause.csv)
+Understanding Airline_Delay_Cause/	Word document explaining the raw dataset
+data/Airline_Delay_Cleaned.csv	Cleaned dataset for Python EDA
+data/Airline_Delay_Production_Ready.csv	Production-ready CSV for SQL analysis
+data_cleaning/	Python notebook: step-by-step data cleaning
+EDA/	Python notebooks + Word doc: exploratory data analysis
+SQL_Analysis/	SQL scripts + Word doc: aggregated analysis
+Database_Table_Create/	SQL scripts to create tables for production-ready dataset
 
-&nbsp;    - Late aircraft delays significant for SkyWest (~37% of total delay minutes).
+Tools & Technologies
 
+Python: Pandas, Matplotlib, Seaborn
 
+PostgreSQL / PGAdmin: SQL aggregation queries
 
-2\. \*\*Airports with Most Impactful Delays\*\*
+Jupyter Notebook: Interactive workflow and code documentation
 
-&nbsp;  - Smaller airports may show extreme delay rates due to low traffic (e.g., Youngstown-Warren, OH → 100%), while major hubs like Newark, NJ have both high average delay minutes (~66 min) and high traffic → highest operational impact.
+Word Documents: Non-technical explanations of analysis
 
+Step-by-Step Workflow
 
+Understand the Dataset
+Columns include: year, month, carrier info, airport info, flights, delays, delay causes, total delay minutes, derived metrics (delay_rate, avg_delay_per_delayed_flight, season).
 
-3\. \*\*Seasonal Patterns\*\*
+Data Cleaning (Python)
 
-&nbsp;  - Summer sees the highest average delay rate (~22.7%) due to peak travel.  
+Renamed columns for clarity
 
-&nbsp;  - Winter follows (~21.9%), likely impacted by weather.  
+Handled missing/null values
 
-&nbsp;  - Spring and Fall have lower delays (~16–18%).
+Added derived metrics for analysis
 
+Exploratory Data Analysis (Python)
 
+Top airlines and airports by delay rate and minutes
 
-4\. \*\*Yearly Trends\*\*
+Seasonal & yearly trends
 
-&nbsp;  - Peak delay years: 2006–2007 (~25% avg delay rate).  
+Visualizations: bar charts, line plots
 
-&nbsp;  - COVID-19 impact: 2020 unusually low (~9.6%) due to fewer flights.  
+SQL Analysis (PostgreSQL)
 
-&nbsp;  - Post-pandemic (2021–2022) returning to pre-COVID levels (~17–21%).
+Aggregated airline and airport delays
 
+Analyzed delay causes
 
+Calculated delay rates and percentages
 
----
+Insights & Recommendations
 
+Airlines: focus on carrier-related and late aircraft delays
 
+Airports: optimize operations for high-traffic hubs
 
-\## 📂 Repository Structure
+Seasonal planning: Summer and Winter require special attention
 
+Visualizations
 
+Top 10 Airports by Average Delay Rate
 
-| Folder/File | Description |
 
-|-------------|-------------|
+Average Delay Rate by Season
 
-| `Airline\_Delay\_Cause/Airline\_Delay\_Cause.csv` | \*\*Raw dataset\*\* downloaded from Kaggle with U.S. domestic airline delay statistics by carrier, airport, and month. |
 
-| `Understanding Airline\_Delay\_Cause/Airline\_Delay\_Cause.docx` | Word document explaining the raw dataset in simple terms for non-technical viewers. |
+Yearly Trend of Average Delay Rate
 
-| `data/Airline\_Delay\_Cleaned.csv` | Cleaned dataset used for \*\*Python EDA\*\*. Includes derived columns like `delay\_rate`, `avg\_delay\_per\_delayed\_flight`, and `season`. Null values partially handled. |
 
-| `data/Airline\_Delay\_Production\_Ready.csv` | Fully cleaned and formatted dataset for \*\*SQL analysis\*\* and database import. All nulls handled, datatypes formatted, production-ready. |
+Delay Causes by Airline
 
-| `data\_cleaning/` | Python notebook for step-by-step data cleaning of the raw CSV. |
 
-| `EDA/` | Python notebook and Word explanation of exploratory data analysis: |
 
-| \&nbsp;\&nbsp;`EDA.ipynb` | EDA in Python (Pandas \& Seaborn) including airline, airport, seasonal, and yearly trends. |
+How to Run
 
-| \&nbsp;\&nbsp;`EDA\_Explained.docx` | Detailed explanation of EDA steps, plots, and insights. |
+Clone the repository:
 
-| `SQL\_Analysis/` | SQL scripts and explanations for aggregated analysis in PostgreSQL: |
+git clone https://github.com/your-username/Airline-Delay-Analysis.git
 
-| \&nbsp;\&nbsp;`SQL\_Analysis.sql` | SQL queries for airlines, airports, seasonal, and yearly delay patterns. |
 
-| \&nbsp;\&nbsp;`SQL\_Analysis\_Explained.docx` | Detailed explanation of SQL analysis and derived insights. |
+Install dependencies:
 
-| `Database\_Table\_Create/` | SQL scripts for creating the production-ready database table. |
+pip install -r requirements.txt
 
-| \&nbsp;\&nbsp;`Airline\_Delay\_Production\_Ready.sql` | SQL table creation for cleaned dataset. |
 
+Run Python notebooks:
 
+data_cleaning/
 
----
+EDA/EDA.ipynb
 
+Run SQL scripts:
 
+SQL_Analysis/
 
-\## 🛠️ Tools \& Technologies
+Database_Table_Create/
 
+Refer to Word documents for step-by-step explanations of EDA and SQL analysis.
 
 
-\- \*\*Python (Pandas, Matplotlib, Seaborn)\*\* – Data cleaning, EDA, visualization  
+Summary
 
-\- \*\*PostgreSQL / PGAdmin\*\* – Aggregation queries and SQL-based analysis  
+Complete end-to-end analytics workflow from raw data to actionable insights
 
-\- \*\*Jupyter Notebook\*\* – Interactive workflow and code documentation  
+Python for cleaning and EDA, SQL for aggregated analysis
 
-\- \*\*Word Documents\*\* – In-depth explanation of analysis steps for non-technical audiences  
-
-
-
----
-
-
-
-\## 📝 Step-by-Step Workflow
-
-
-
-1\. \*\*Understanding the Dataset\*\*
-
-&nbsp;  - Dataset columns include: `year`, `month`, `carrier\_code`, `carrier\_name`, `airport\_code`, `airport\_name`, `total\_flights`, `delayed\_flights\_15min`, `carrier\_delay\_count`, `weather\_delay\_count`, `nas\_delay\_count`, `security\_delay\_count`, `late\_aircraft\_delay\_count`, `cancelled\_flights`, `diverted\_flights`, `total\_delay\_minutes`, `carrier\_delay\_minutes`, `weather\_delay\_minutes`, `nas\_delay\_minutes`, `security\_delay\_minutes`, `late\_aircraft\_delay\_minutes`, `date`, `delay\_rate`, `avg\_delay\_per\_delayed\_flight`, `season`, and delay percentages.
-
-
-
-2\. \*\*Data Cleaning\*\*
-
-&nbsp;  - Renamed columns for readability  
-
-&nbsp;  - Handled missing/null values with meaningful replacements  
-
-&nbsp;  - Added derived columns: `delay\_rate`, `avg\_delay\_per\_delayed\_flight`, `season`  
-
-
-
-3\. \*\*Exploratory Data Analysis (Python)\*\*
-
-&nbsp;  - Analyzed top airlines and airports by delay rate and average delay minutes  
-
-&nbsp;  - Explored seasonal and yearly delay trends  
-
-&nbsp;  - Visualized patterns using Seaborn and Matplotlib  
-
-
-
-4\. \*\*SQL Analysis (PostgreSQL)\*\*
-
-&nbsp;  - Aggregated data to calculate top airlines/airports, delay causes, seasonal patterns, and yearly trends  
-
-&nbsp;  - Used production-ready CSV (`Airline\_Delay\_Production\_Ready.csv`) for reliable and formatted analysis  
-
-
-
-5\. \*\*Insights \& Recommendations\*\*
-
-&nbsp;  - Airlines: focus on reducing carrier-related and late aircraft delays  
-
-&nbsp;  - Airports: prioritize hubs with high traffic and long average delay minutes  
-
-&nbsp;  - Seasonal planning: optimize staffing and operations for Summer and Winter  
-
-
-
----
-
-
-
-\## 📊 Visualizations
-
-
-
-\- Airline delay rates and average delay minutes  
-
-\- Airport delay rates and average delay minutes  
-
-\- Seasonal delay patterns  
-
-\- Yearly trends, including COVID-19 impact  
-
-
-
----
-
+Insights help airline operations, airport management, and strategic planning
